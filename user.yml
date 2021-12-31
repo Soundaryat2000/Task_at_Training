@@ -1,0 +1,12 @@
+- name: create a user and give a sudo permission
+  hosts: localhost 
+
+  become: yes 
+
+  become_method: "sudo" 
+
+  tasks: 
+
+  - include_role: 
+
+      name: user_role 
