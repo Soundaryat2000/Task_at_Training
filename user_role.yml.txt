@@ -1,0 +1,20 @@
+- name: create a user
+
+  user:
+
+        name=sound
+
+        state=present
+
+        createhome=yes
+
+
+- name: Setup Sudo Access for Devops User
+
+  copy:
+
+    dest: /etc/sudoers.d/sound
+
+    content: 'sound ALL=(ALL) NOPASSWD: ALL'
+
+    validate: /usr/sbin/visudo -cf %s
